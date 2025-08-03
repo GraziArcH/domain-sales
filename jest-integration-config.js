@@ -1,0 +1,11 @@
+const config = require("./jest.config");
+config.testMatch = ["**/*.test.ts"];
+config.testTimeout = 120000; // 2 minutes timeout to account for vault initialization
+config.setupFilesAfterEnv = ['<rootDir>/tests/integration/setup.js']; // Add setup file
+config.maxWorkers = 1; // Run tests sequentially to avoid connection conflicts
+config.detectOpenHandles = true; // Detect open handles to prevent hanging
+config.forceExit = true; // Force exit after tests complete
+config.maxConcurrency = 1; // Use maxConcurrency instead of runInBand
+config.bail = 1; // Stop after first test failure to prevent cascade timeouts
+config.verbose = true; // More detailed output for debugging
+module.exports = config;

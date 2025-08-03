@@ -1,0 +1,44 @@
+{
+  "name": "@archoffice/domain-sales",
+  "version": "4.3.7",
+  "description": "Lib de domínios do contexto de vendas e planos. See DATABASE_CONNECTIONS.md for database setup requirements.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "ArcH",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc -d -p tsconfig-build.json && tsc-alias -p tsconfig-build.json",
+    "test": "jest --passWithNoTests --detectOpenHandles --silent",
+    "test:unit": "yarn test -c jest-unit-config.js",
+    "test:integration": "yarn test -c jest-integration-config.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "prettier": "prettier --write \"src/**/*.{ts,js,json,md}\""
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.11",
+    "@types/pg": "^8.10.9",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-prettier": "^5.5.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.6.0",
+    "prettier-eslint": "^16.4.2",
+    "prettier-eslint-cli": "^8.0.1",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.0",
+    "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.8.5",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "pg": "^8.11.3",
+    "versatus-arch-framework": "^1.13.0"
+  },
+  "packageManager": "yarn@4.9.2"
+}
